@@ -1,0 +1,10 @@
+**/bin/
+**/obj/
+.vs/
+.dotnet/
+.appdata/
+.nuget/
+.docker/
+tmp/
+**/appsettings.Local.json
+*.user

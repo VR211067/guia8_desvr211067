@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="ProductosAPI/ProductosAPI.csproj" />
+  <Project Path="LibrosAPI/LibrosAPI.csproj" />
+</Solution>

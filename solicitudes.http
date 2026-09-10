@@ -1,0 +1,44 @@
+@productos = http://localhost:5105/api/Productos
+@libros = http://localhost:5106/api/Libros
+
+### Ejecutar dos veces y comparar X-Cache
+GET {{productos}}
+
+### Detalle; ejecutar dos veces
+GET {{productos}}/1
+
+### Crear producto; copiar el Id devuelto para PUT y DELETE
+POST {{productos}}
+Content-Type: application/json
+
+{"nombre":"Prueba Redis","categoria":"Laboratorio","descripcion":"Producto temporal"}
+
+### Sustituir 4 por el Id creado, también en el JSON
+PUT {{productos}}/4
+Content-Type: application/json
+
+{"id":4,"nombre":"Prueba actualizada","categoria":"Laboratorio","descripcion":"Cambio con invalidación"}
+
+### Sustituir por el Id creado
+DELETE {{productos}}/4
+
+### Libros sembrados; ejecutar dos veces
+GET {{libros}}
+
+### Detalle libro
+GET {{libros}}/1
+
+### Crear libro temporal
+POST {{libros}}
+Content-Type: application/json
+
+{"titulo":"Libro temporal","autor":"Autor de prueba","anioPublicacion":2026}
+
+### Sustituir 104 por el Id creado, también en el JSON
+PUT {{libros}}/104
+Content-Type: application/json
+
+{"id":104,"titulo":"Libro actualizado","autor":"Autor de prueba","anioPublicacion":2026}
+
+### Sustituir por el Id creado
+DELETE {{libros}}/104
