@@ -58,6 +58,7 @@ public class LibrosController(LibrosDbContext context, IConnectionMultiplexer re
     [HttpPost]
     public async Task<ActionResult<Libro>> PostLibro(Libro item)
     {
+        if (string.IsNullOrWhiteSpace(item.Titulo)) return BadRequest("El libro no tiene título.");
         if (item.Id != 0) return BadRequest("El Id es generado por la base de datos.");
         context.Libros.Add(item);
         await context.SaveChangesAsync();

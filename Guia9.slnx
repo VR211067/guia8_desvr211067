@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ProductosAPI/ProductosAPI.csproj" />
+  <Project Path="LibrosAPI/LibrosAPI.csproj" />
+  <Project Path="LibrosAPI.Tests/LibrosAPI.Tests.csproj" />
+  <Project Path="PersonasAPI/PersonasAPI.csproj" />
+  <Project Path="PersonasAPI.Tests/PersonasAPI.Tests.csproj" />
+</Solution>
